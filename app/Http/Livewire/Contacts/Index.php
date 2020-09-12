@@ -13,7 +13,6 @@ class Index extends Component
 
     public $contact_types;
     public $search, $location_search, $type_search, $sorting;
-    public $pagination_links;
 
     protected $queryString = ['search' => ['except' => ''], 'location_search' => ['except' => ''], 'type_search', 'sorting'];
 

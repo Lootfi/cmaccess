@@ -550,7 +550,7 @@
                 <div class="candidate_job_alart_btn mb35">
                     <h4 class="fz20 mb15">{{$contacts->total()}} Contacts Trouvés {{$search}}</h4>
                     {{-- <a class="btn btn-thm" href="#"><span class="flaticon-mail"></span> Get Job Alerts</a> --}}
-                    <button class="btn btn-thm btns dn db-991 float-right">Show Filter</button>
+                    <button class="btn btn-thm btns dn db-991 float-right">Afficher les Filtres</button>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-6">

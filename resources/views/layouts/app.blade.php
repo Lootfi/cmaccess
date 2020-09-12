@@ -50,7 +50,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <a href="index.html" class="navbar_brand float-left dn-smd align-middle">
+                <a href="{{route('dashboard')}}" class="navbar_brand float-left dn-smd align-middle">
                     <img class="img-fluid mt10 mb10 w-56 align-middle d-inline" src="{{asset('images/logo-white.png')}}"
                         alt="{{asset('images/logo-white.png')}}">
                 </a>
@@ -60,6 +60,10 @@
                     <li>
                         <a class="{{Request::routeIs('dashboard') ? 'active' : ''}}" href="{{route('dashboard')}}"><span
                                 class="title">Home</span></a>
+                    </li>
+                    <li>
+                        <a class="{{Request::routeIs('labels') ? 'active' : ''}}" href=" {{route('labels')}}"><span
+                                class="title">Labels</span></a>
                     </li>
                     <li>
                         <a class="{{Request::routeIs('contacts') ? 'active' : ''}}" href=" {{route('contacts')}}"><span
@@ -187,6 +191,9 @@
         <nav id="menu" class="stylehome1">
             <ul>
                 <li><a href="{{route('dashboard')}}">Home</a>
+                </li>
+                <li>
+                    <a href="{{route('labels')}}">Labels</a>
                 </li>
                 <li>
                     <a href="{{route('contacts')}}">Contacts</a>
