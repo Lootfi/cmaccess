@@ -24,6 +24,7 @@
 
     @livewireStyles
 
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.js" defer></script>
 </head>
@@ -307,6 +308,7 @@
     @stack('modals')
 
     @livewireScripts
+    @livewireAssets
 
     <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script type=" text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
@@ -327,6 +329,7 @@
     <script type=" text/javascript" src="{{asset('js/timepicker.js')}}"></script>
     <!-- Custom script for all pages -->
     <script type=" text/javascript" src="{{asset('js/script.js')}}"></script>
+    <script type=" text/javascript" src="{{asset('js/app.js')}}"></script>
 </body>
 
 </html>

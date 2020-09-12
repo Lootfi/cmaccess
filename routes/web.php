@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Livewire\Contacts;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
         return view('welcome');
     });
-    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+    Route::get('/contacts', Contacts::class)->name('contacts');
+    // Route::post('/contacts', [Contact::class, 'search'])->name('contacts.search');
     Route::get('/contacts/{slug}', [ContactController::class, 'show'])->name('contact');
 
     // Route::get('/entreprises', 'EntrepriseController@index')->name('entreprises');

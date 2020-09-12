@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ContactSocialLinks extends Model
 {
     use HasFactory;
+
+    public function contact()
+    {
+        return $this->belongsTo(Contact::class);
+    }
 }
