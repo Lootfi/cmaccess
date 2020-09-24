@@ -255,18 +255,18 @@
                         <div class="fj_post style2 lpd45">
                             <div class="details">
                                 <div class="thumb fn-smd">
-                                    <img class="img-fluid" src="images/partners/e1.jpg" alt="e1.jpg">
+                                    <img class="img-fluid" width="120" src="{{$entreprise->Logo}}">
                                 </div>
                                 <h4>{{$entreprise->name}}</h4>
                                 <p class="text-thm2">Education Training</p>
                                 <ul class="featurej_post mb25">
                                     <li class="list-inline-item"><span class="flaticon-location-pin"></span> <a
-                                            href="#">England, London</a></li>
+                                            href="#">{{$entreprise->address}}</a></li>
                                 </ul>
                             </div>
                             <div class="job_post_count text-center">
-                                <h3 class="text-thm2">8</h3>
-                                <p>Open Jobs</p>
+                                <h3 class="text-thm2">{{$entreprise->contacts_count}}</h3>
+                                <p>Contacts</p>
                             </div>
                         </div>
                     </div>

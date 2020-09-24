@@ -567,9 +567,8 @@
                     </ul>
                 </div>
 
-
-
             </div>
+
 
             @if ($contacts->total() != 0)
             {{-- Contacts List Start --}}

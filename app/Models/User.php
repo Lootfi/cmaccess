@@ -4,8 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -52,8 +55,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
-        'profile_photo_url', 'Avatar'
+        'profile_photo_url', 'Avatar', 'PaymentMethodName'
     ];
+
+    public function getPaymentMethodNameAttribute()
+    {
+        if ($this->payment_confirmed == 0) return 'Pas encore';
+        else if (preg_match('/.*(stripe).*/', $this->payment_method)) return 'Stripe';
+        else return 'PayPal';
+    }
 
 
     public function getAvatarAttribute()

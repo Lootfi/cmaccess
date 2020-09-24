@@ -1,9 +1,14 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AvatarController;
 use App\Http\Livewire\Contacts;
 use App\Http\Livewire\Labels;
+use App\Http\Livewire\User\PasswordUpdate;
+use App\Http\Livewire\User\ProfileUpdate;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +22,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+Route::post('delete-photo', function () {
+    Storage::disk('artist_pictures')->delete('public/images/artists/default.jpeg');
+});
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::get('/profile/update', ProfileUpdate::class)->name('profile-update');
+    Route::get('/profile/password', PasswordUpdate::class)->name('password-update');
     Route::get('/', function () {
         return view('welcome');
+        // Storage::disk('artist_pictures')->delete('public/images/artists/default.jpeg');
+        // Storage::disk('artist_pictures')->delete('public/images/artists/default.jpeg');
+
     });
     Route::get('/contacts', Contacts::class)->name('contacts');
     Route::get('/labels', Labels::class)->name('labels');

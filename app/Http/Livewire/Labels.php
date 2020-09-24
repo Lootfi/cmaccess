@@ -37,6 +37,7 @@ class Labels extends Component
         $entreprises = Entreprise::where([
             ['name', 'like', '%' . $this->search . '%']
         ])
+            ->withCount('contacts')
             ->$orderBy()
             ->paginate(2);
 
