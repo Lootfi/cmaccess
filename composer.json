@@ -16,7 +16,9 @@
         "laravel/jetstream": "^1.0",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
-        "livewire/livewire": "^2.0"
+        "livewire/livewire": "^2.0",
+        "paypal/rest-api-sdk-php": "^1.14",
+        "stripe/stripe-php": "^7.54"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

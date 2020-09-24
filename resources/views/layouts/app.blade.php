@@ -116,7 +116,7 @@
                                         Manage Account
                                     </div>
 
-                                    <x-jet-dropdown-link href="/user/profile">
+                                    <x-jet-dropdown-link href="/profile/update">
                                         Profile
                                     </x-jet-dropdown-link>
 

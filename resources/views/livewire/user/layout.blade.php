@@ -18,6 +18,11 @@
                                 Mon Profile</a></li>
                         <li><a href="page-candidates-favourite-jobs.html"><span class="flaticon-favorites"></span>
                                 Mes Contacts Favorites</a></li>
+                        @if (!$user->payment_confirmed)
+                        <li class="{{Request::routeIs('essai-gratuit') ? 'active' : ''}}"><a
+                                href="{{route('essai-gratuit')}}"><span class="flaticon-customer-support"></span>Essai
+                                Gratuit</a></li>
+                        @endif
                         <li class="{{Request::routeIs('password-update') ? 'active' : ''}}"><a
                                 href="{{route('password-update')}}"><span class="flaticon-locked"></span> Changer
                                 Mon Mot de Passe</a></li>
