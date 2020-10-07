@@ -82,4 +82,9 @@ class User extends Authenticatable
 
         return $pic;
     }
+
+    public function payment_auth()
+    {
+        return $this->hasOne(ClientPaymentAuthorization::class, 'client_id', 'id');
+    }
 }

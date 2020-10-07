@@ -16,9 +16,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <!-- Favicon -->
@@ -221,24 +221,25 @@
 
 
     <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/popper.min.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/jquery.mmenu.all.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/ace-responsive-menu.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/bootstrap-select.min.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/snackbar.min.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/simplebar.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/parallax.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/scrollto.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/jquery.counterup.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/wow.min.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/progressbar.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/slider.js')}}"></script>
-    <script type=" text/javascript" src="{{asset('js/timepicker.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.mmenu.all.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/ace-responsive-menu.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap-select.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/snackbar.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/simplebar.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/parallax.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/scrollto.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.counterup.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/tagsinput.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/progressbar.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/slider.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/timepicker.js')}}"></script>
     <!-- Custom script for all pages -->
-    <script type=" text/javascript" src="{{asset('js/script.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 
     @livewireScripts
 

@@ -6,19 +6,35 @@
                 <h4 class="fz20 mb15">Nom</h4>
                 <div class="input-group mb-3">
                     <input type="text" wire:dirty.class="color-green" wire:model.lazy="search" class="form-control"
-                        placeholder="Marvel" aria-label="search" aria-describedby="button-addon2">
+                        placeholder="e.g. Myriam" aria-label="search" aria-describedby="button-addon2"
+                        value="new URLSearchParams(window.location.search).get('search')">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><span
                                 class="flaticon-search"></span></button>
                     </div>
                 </div>
             </div>
+
+            <div class="faq_search_widget mb30">
+                <h4 class="fz20 mb15">Label</h4>
+                <div class="input-group mb-3">
+                    <input type="text" wire:dirty.class="color-green" wire:model.lazy="entreprise_search"
+                        class="form-control" placeholder="e.g. Barclay" aria-label="Recipient's username"
+                        aria-describedby="button-addon2"
+                        value="new URLSearchParams(window.location.search).get('entreprise_search')">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><span
+                                class="flaticon-company"></span></button>
+                    </div>
+                </div>
+            </div>
+
             <div class="faq_search_widget mb30">
                 <h4 class="fz20 mb15">Pays</h4>
                 <div class="input-group mb-3">
                     <input type="text" wire:dirty.class="color-green" wire:model.lazy="location_search"
-                        class="form-control" placeholder="France" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
+                        value="new URLSearchParams(window.location.search).get('location_search')" class="form-control"
+                        placeholder="e.g. France" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><span
                                 class="flaticon-location-pin"></span></button>
@@ -548,7 +564,8 @@
         <div class="row">
             <div class="col-sm-6 col-lg-6">
                 <div class="candidate_job_alart_btn mb35">
-                    <h4 class="fz20 mb15">{{$contacts->total()}} Contacts Trouvés {{$search}}</h4>
+                    <h4 class="fz20 mb15">{{$contacts->total()}} Contacts Trouvés {{$search ? '"' . $search . '"' : ""}}
+                    </h4>
                     {{-- <a class="btn btn-thm" href="#"><span class="flaticon-mail"></span> Get Job Alerts</a> --}}
                     <button class="btn btn-thm btns dn db-991 float-right">Afficher les Filtres</button>
                 </div>
@@ -600,18 +617,17 @@
                             </li>
                             <li class="list-inline-item"><a href="#"><span class="fa fa-star-o"></span></a></li>
                         </ul>
-                        <h4 class="title">{{$contact->name}}</h4>
+                        <h4 class="title">{{$contact->prenom}} {{$contact->name}}</h4>
                         <p>{{$contact->title}}</p>
                     </div>
                     <div class="details">
                         <div class="job_locate">
                             <p class="float-left">Location</p>
                             <ul class="float-right">
+                                {{-- <li class="list-inline-item m0"><span class="flaticon-location-pin"></span></li> --}}
                                 <li class="list-inline-item m0">
                                     <p>{{$contact->country}}</p>
                                 </li>
-                                <li class="list-inline-item m0"><img class="img-fluid pl5"
-                                        src="images/resource/turkey.png" alt="turkey.png"></li>
                             </ul>
                         </div>
                         <div class="job_srate">
@@ -619,8 +635,8 @@
                             <span class="float-right">100%</span>
                         </div>
                         <div class="ef_prf_link mt10">
-                            <a class="btn btn-block btn-transparent" href="#">Voir le Profil<i
-                                    class="flaticon-right-arrow pl10"></i></a>
+                            <a class="btn btn-block btn-transparent" href="{{route('contact',$contact->id)}}">Voir le
+                                Profil<i class="flaticon-right-arrow pl10"></i></a>
                         </div>
                     </div>
                 </div>

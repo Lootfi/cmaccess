@@ -5,15 +5,21 @@
     <h4 class="text-center">il vous reste {{$timeLeft}} d'essai gratuit</h4>
     <br>
     <br>
-    <x-jet-button wire:click="cancelPayment">
-        Annuler Le paiement
-    </x-jet-button>
+    <form wire:submit.prevent="cancelPayment">
+        <button type="submit">
+            Annuler Le paiement
+        </button>
+    </form>
 </div>
 
 @endsection
 
 @push('scripts')
 <script>
-    document.addEventListener('DOMContentLoaded', function () {});
+    document.addEventListener('DOMContentLoaded', function () {
+        Livewire.on('paymentCanceled', () => {
+            window.location.reload();
+})
+    });
 </script>
 @endpush

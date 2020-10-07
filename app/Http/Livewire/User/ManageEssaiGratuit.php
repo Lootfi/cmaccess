@@ -2,17 +2,20 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\User;
 use Carbon\Carbon;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use PayPal\Api\Authorization;
+use PayPal\Auth\OAuthTokenCredential;
+use PayPal\Rest\ApiContext;
 
 class ManageEssaiGratuit extends Component
 {
 
     public $name, $email, $user, $slug;
     public $timeLeft;
-
 
     public function mount()
     {
@@ -27,10 +30,23 @@ class ManageEssaiGratuit extends Component
 
     public function cancelPayment()
     {
-        $this->timeLeft = "nooo";
-        Auth::logout();
+        $paypal_conf = config('paypal');
+        $_api_context = new ApiContext(new OAuthTokenCredential(
+            $paypal_conf['client_id'],
+            $paypal_conf['secret']
+        ));
+        $_api_context->setConfig($paypal_conf['settings']);
 
-        return redirect()->to('login');
+        try {
+            $authorization = Authorization::get($this->user->payment_auth->auth_id, $_api_context);
+            $voided = $authorization->void($_api_context);
+            Auth::logout();
+            $this->user->payment_auth->delete();
+            $this->user->delete();
+            $this->emit('paymentCanceled');
+        } catch (\Exception $ex) {
+            dd($ex);
+        }
     }
 
     public function render()

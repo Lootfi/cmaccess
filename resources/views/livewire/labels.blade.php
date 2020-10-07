@@ -255,9 +255,10 @@
                         <div class="fj_post style2 lpd45">
                             <div class="details">
                                 <div class="thumb fn-smd">
-                                    <img class="img-fluid" width="120" src="{{$entreprise->Logo}}">
+                                    <a href="{{route('label',$entreprise->id)}}"><img class="img-fluid" width="120"
+                                            src="{{$entreprise->Logo}}"></a>
                                 </div>
-                                <h4>{{$entreprise->name}}</h4>
+                                <h4><a href="{{route('label',$entreprise->id)}}">{{$entreprise->name}}</a></h4>
                                 <p class="text-thm2">Education Training</p>
                                 <ul class="featurej_post mb25">
                                     <li class="list-inline-item"><span class="flaticon-location-pin"></span> <a
