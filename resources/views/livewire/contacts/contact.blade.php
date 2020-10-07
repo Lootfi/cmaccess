@@ -16,7 +16,7 @@
                         <p>{{$contact->title}}</p>
                         <ul class="address_list" style="display: flex; align-items: center;">
                             <li class="list-inline-item"><a
-                                    href="{{route('label',$entreprises->first()->id)}}">{{$entreprises->first()->name}}</a>
+                                    href="{{route('entreprise',$entreprises->first()->id)}}">{{$entreprises->first()->name}}</a>
                             </li>
                             <li class="list-inline-item"><a href="#"><img
                                         src="{{asset('images/countries/'.$contact->country)}}.png" alt="usa.png"></a>

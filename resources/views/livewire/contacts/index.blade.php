@@ -601,9 +601,9 @@
                         <a class="ef_bookmark" href="#" title="BookMark Freelancer"><span
                                 class="flaticon-favorites"></span></a>
                     </div>
-                    <div class="thumb text-center">
+                    <a href="{{route('contact',$contact->id)}}" class="thumb text-center">
                         <img class="img-fluid" src="{{$contact->Picture}}" alt="4.jpg">
-                    </div>
+                    </a>
                     <div class="freelancer_review">
                         <div class="everage_rating">4.5</div>
                         <ul class="rating_list">
@@ -635,7 +635,8 @@
                             <span class="float-right">100%</span>
                         </div>
                         <div class="ef_prf_link mt10">
-                            <a class="btn btn-block btn-transparent" href="{{route('contact',$contact->id)}}">Voir le
+                            <a class="btn btn-block btn-transparent" href="{{route('contact',$contact->id)}}">Voir
+                                le
                                 Profil<i class="flaticon-right-arrow pl10"></i></a>
                         </div>
                     </div>

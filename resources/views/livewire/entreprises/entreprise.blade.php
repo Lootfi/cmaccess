@@ -11,7 +11,7 @@
                     <div class="col-lg-12">
                         <div class="candidate_personal_info mbt45 style2 job_singe_v5">
                             <div class="thumb one text-center">
-                                <img class="img-fluid rounded" src="{{$entreprise->Logo}}" alt="cl1.jpg">
+                                <img class="img-fluid rounded" width="120" src="{{$entreprise->Logo}}" alt="cl1.jpg">
                             </div>
                             <div class="details">
                                 <h3>{{$entreprise->name}}</h3>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="row job_meta_list mt30 mb30" style="display: flex; align-items: center;">
-                    <div class="col-sm-4 col-lg-4"><button class="btn btn-block btn-thm">Ajouter au Favoris
+                    <div class="col-sm-5 col-lg-5"><button class="btn btn-block btn-thm">Ajouter au Favoris
                             <span class="flaticon-favorites fz24 pl10"></span></button></div>
 
                     <div class="col-sm-4 col-lg-4">
@@ -42,6 +42,50 @@
                             <p class="pt-5 pb-10">{{$entreprise->description}}</p>
                         </div>
                     </div>
+                    @if ($sous_labels)
+                    <div class="col-lg-12">
+                        <div class="candidate_single_skill">
+                            <h4 class="title">Divisions / Sous-Labels</h4>
+                            <div class="skill_tag">
+                                <ul class="tag_list">
+                                    @foreach ($sous_labels as $label)
+                                    <li class="list-inline-item"><span>{{$label}}</span></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if ($artists)
+                    <div class="col-lg-12">
+                        <div class="candidate_single_skill">
+                            <h4 class="title">Artistes Signés</h4>
+                            <div class="skill_tag">
+                                <ul class="tag_list">
+                                    @foreach ($artists as $artist)
+                                    <li class="list-inline-item"><span>{{$artist}}</span></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if ($genres)
+                    <div class="col-lg-12">
+                        <div class="candidate_single_skill">
+                            <h4 class="title">Genres Musicaux</h4>
+                            <div class="skill_tag">
+                                <ul class="tag_list">
+                                    @foreach ($genres as $genre)
+                                    <li class="list-inline-item"><span>{{$genre}}</span></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <div class="col-lg-12">
                         <div class="my_resume_eduarea">
                             <h4 id="contacts" class="title mb45">Contacts</h4>
@@ -50,23 +94,24 @@
                     @if ($contacts->count() > 0)
                     @foreach ($contacts as $contact)
                     <div class="col-lg-12">
-                        <div class="fj_post style2 one">
-                            <div class="details">
-                                <h5 class="job_chedule text-thm2">Full Time</h5>
-                                <div class="thumb fn-smd">
-                                    <img class="img-fluid" src="{{$contact->Picture}}" width="140px" alt="1.jpg">
+                        <a href="{{route('contact',$contact->id)}}">
+                            <div class="fj_post style2 one">
+                                <div class="details">
+                                    <h5 class="job_chedule text-thm2">{{$contact->title}}
+                                    </h5>
+                                    <div class="thumb fn-smd">
+                                        <img class="img-fluid" src="{{$contact->Picture}}" width="140px" alt="1.jpg">
+                                    </div>
+                                    <h4>{{$contact->name}}</h4>
+                                    <p>Mis à jour {{Carbon\Carbon::parse($contact->updated_at)->diffForHumans()}}</p>
+                                    <ul class="featurej_post">
+                                        <li class="list-inline-item"><span class="flaticon-location-pin"></span> <a
+                                                href="#">{{$contact->state . ', ' . $contact->country}}</a></li>
+                                    </ul>
                                 </div>
-                                <h4>{{$contact->name}}</h4>
-                                <p>Mis à jour {{Carbon\Carbon::parse($contact->updated_at)->diffForHumans()}}</p>
-                                <ul class="featurej_post">
-                                    <li class="list-inline-item"><span class="flaticon-location-pin"></span> <a
-                                            href="#">{{$contact->address}}</a></li>
-                                    <li class="list-inline-item"><span class="flaticon-price pl20"></span> <a
-                                            href="#">$13.00 - $18.00 per hour</a></li>
-                                </ul>
+                                <a class="favorit" href=""><span class="flaticon-favorites"></span></a>
                             </div>
-                            <a class="favorit" href="#"><span class="flaticon-favorites"></span></a>
-                        </div>
+                        </a>
                     </div>
                     @endforeach
                     @endif

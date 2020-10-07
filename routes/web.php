@@ -4,8 +4,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AvatarController;
 use App\Http\Livewire\Contacts\Contact;
 use App\Http\Livewire\Contacts\Contacts;
-use App\Http\Livewire\Labels\Label;
-use App\Http\Livewire\Labels\Labels;
+use App\Http\Livewire\Entreprises\Entreprise;
+use App\Http\Livewire\Entreprises\Entreprises;
 use App\Http\Livewire\User\ManageEssaiGratuit;
 use App\Http\Livewire\User\PasswordUpdate;
 use App\Http\Livewire\User\ProfileUpdate;
@@ -41,8 +41,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
     Route::get('/contacts', Contacts::class)->name('contacts');
     Route::get('/contacts/{contact}', Contact::class)->name('contact');
-    Route::get('/labels', Labels::class)->name('labels');
-    Route::get('/labels/{label}', Label::class)->name('label');
+    Route::get('/entreprises', Entreprises::class)->name('entreprises');
+    Route::get('/entreprises/{entreprise}', Entreprise::class)->name('entreprise');
     // Route::post('/contacts', [Contact::class, 'search'])->name('contacts.search');
     // Route::get('/contacts/{slug}', [ContactController::class, 'show'])->name('contact');
 

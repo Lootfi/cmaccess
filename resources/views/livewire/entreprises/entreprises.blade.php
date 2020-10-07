@@ -97,7 +97,7 @@
                     <div class="col-sm-6 col-lg-6">
                         <div class="candidate_job_alart_btn">
                             <button class="btn btn-thm btns dn db-991 float-right">Afficher les Filtres</button>
-                            <h4 class="fz20">{{$entreprises->total()}} Labels Trouvés</h4>
+                            <h4 class="fz20">{{$entreprises->total()}} Entreprises Trouvés</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6">
@@ -255,10 +255,10 @@
                         <div class="fj_post style2 lpd45">
                             <div class="details">
                                 <div class="thumb fn-smd">
-                                    <a href="{{route('label',$entreprise->id)}}"><img class="img-fluid" width="120"
+                                    <a href="{{route('entreprise',$entreprise->id)}}"><img class="img-fluid" width="120"
                                             src="{{$entreprise->Logo}}"></a>
                                 </div>
-                                <h4><a href="{{route('label',$entreprise->id)}}">{{$entreprise->name}}</a></h4>
+                                <h4><a href="{{route('entreprise',$entreprise->id)}}">{{$entreprise->name}}</a></h4>
                                 <p class="text-thm2">Education Training</p>
                                 <ul class="featurej_post mb25">
                                     <li class="list-inline-item"><span class="flaticon-location-pin"></span> <a

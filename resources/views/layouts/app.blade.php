@@ -62,8 +62,8 @@
                                 class="title">Home</span></a>
                     </li>
                     <li>
-                        <a class="{{Request::routeIs('labels') ? 'active' : ''}}" href=" {{route('labels')}}"><span
-                                class="title">Labels</span></a>
+                        <a class="{{Request::routeIs('entreprises') ? 'active' : ''}}"
+                            href=" {{route('entreprises')}}"><span class="title">Entreprises</span></a>
                     </li>
                     <li>
                         <a class="{{Request::routeIs('contacts') ? 'active' : ''}}" href=" {{route('contacts')}}"><span
@@ -95,9 +95,9 @@
                             </li>
                         </ul>
                     </li> --}}
-                    <li class="last">
+                    {{-- <li class="last">
                         <a href="page-employer-post-job.html"><span class="title">Post a Job</span></a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <ul class="sign_up_btn pull-right dn-smd mt25">
                     <li>
@@ -193,7 +193,7 @@
                 <li><a href="{{route('dashboard')}}">Home</a>
                 </li>
                 <li>
-                    <a href="{{route('labels')}}">Labels</a>
+                    <a href="{{route('entreprises')}}">Labels</a>
                 </li>
                 <li>
                     <a href="{{route('contacts')}}">Contacts</a>

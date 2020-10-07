@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Labels;
+namespace App\Http\Livewire\Entreprises;
 
 use App\Models\Entreprise;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Labels extends Component
+class Entreprises extends Component
 {
     use WithPagination;
 
@@ -41,6 +41,6 @@ class Labels extends Component
             ->$orderBy()
             ->paginate(2);
 
-        return view('livewire.labels', ['entreprises' => $entreprises])->extends('layouts.app');
+        return view('livewire.entreprises.entreprises', ['entreprises' => $entreprises])->extends('layouts.app');
     }
 }
