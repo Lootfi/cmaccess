@@ -586,53 +586,39 @@
 
             </div>
 
-
             @if ($contacts->total() != 0)
             {{-- Contacts List Start --}}
             @foreach ($contacts as $contact)
             {{-- Contact Card Start --}}
-            {{-- @livewire('contacts.card', ['contact' => $contact]) --}}
-            {{-- @component('components.contacts.card',['contact' => $contact])
-            @endcomponent --}}
             <div class="col-md-6 col-lg-6">
                 <div class="ef_post style2 mt30-smd">
                     <div class="ef_header">
-                        <h4 class="hr_rate"><span class="text-thm">$150</span> <small>/hr</small></h4>
-                        <a class="ef_bookmark" href="#" title="BookMark Freelancer"><span
-                                class="flaticon-favorites"></span></a>
+                        {{-- <h4 class="hr_rate"><span class="text-thm">$150</span> <small>/hr</small></h4> --}}
+                        @if (!$favorites->contains('id', $contact->id))
+                        <span style="cursor: pointer" wire:click="AddToFavorite({{$contact->id}})" class="ef_bookmark"
+                            title="Ajouter au Favoris"><span class="flaticon-favorites"></span></span>
+                        @endif
                     </div>
                     <a href="{{route('contact',$contact->id)}}" class="thumb text-center">
                         <img class="img-fluid" src="{{$contact->Picture}}" alt="4.jpg">
                     </a>
                     <div class="freelancer_review">
-                        <div class="everage_rating">4.5</div>
-                        <ul class="rating_list">
-                            <li class="list-inline-item"><a href="#"><span class="fa fa-star color-golden"></span></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><span class="fa fa-star color-golden"></span></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><span class="fa fa-star color-golden"></span></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><span class="fa fa-star color-golden"></span></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><span class="fa fa-star-o"></span></a></li>
-                        </ul>
-                        <h4 class="title">{{$contact->prenom}} {{$contact->name}}</h4>
+
+                        <a href="{{route('contact',$contact->id)}}">
+                            <h4 class="title">{{$contact->prenom}} {{$contact->name}}</h4>
+                        </a>
                         <p>{{$contact->title}}</p>
+                        <h5>{{$contact->entreprises->first()->name}}</h5>
                     </div>
                     <div class="details">
                         <div class="job_locate">
-                            <p class="float-left">Location</p>
+                            <p class="float-left">Pays</p>
                             <ul class="float-right">
                                 {{-- <li class="list-inline-item m0"><span class="flaticon-location-pin"></span></li> --}}
                                 <li class="list-inline-item m0">
                                     <p>{{$contact->country}}</p>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="job_srate">
-                            <span class="float-left">Job Success</span>
-                            <span class="float-right">100%</span>
                         </div>
                         <div class="ef_prf_link mt10">
                             <a class="btn btn-block btn-transparent" href="{{route('contact',$contact->id)}}">Voir

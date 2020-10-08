@@ -390,7 +390,7 @@
     .testimonial_content {
         padding: 60px 40px;
     }
-    .fj_post.style2 a.favorit {
+    .fj_post.style2 .favorit {
         right: 30px;
         top: 50px;
     }
@@ -545,7 +545,7 @@
     .home5_mt {
         margin-top: 0;
     }
-    .fj_post.style2 a.favorit {
+    .fj_post.style2 .favorit {
         right: 30px;
         top: 20px;
     }
@@ -716,7 +716,7 @@
     .sticky-nav-tab {
         padding: 20px 10px 0;
     }
-    .fj_post.style2 a.favorit {
+    .fj_post.style2 .favorit {
         right: 30px;
         top: 10px;
     }
@@ -965,7 +965,7 @@
     .home5-slider .home_content .slider-text1 {
         font-size: 30px;
     }
-    .fj_post.style2.home5 a.favorit {
+    .fj_post.style2.home5 .favorit {
         right: 25px;
     }
     .icon_box_home6 {
@@ -1375,7 +1375,7 @@
     .recent_job_trafic .trafic_details ul.trafic_list {
         margin-left: 20px;
     }
-    .fj_post.style2.jlv5 a.favorit {
+    .fj_post.style2.jlv5 .favorit {
         margin-right: 0;
     }
     .job_list_three.sidenav {

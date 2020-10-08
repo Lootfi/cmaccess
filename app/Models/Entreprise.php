@@ -34,4 +34,9 @@ class Entreprise extends Model
     {
         return $this->belongsToMany(Contact::class, 'entreprise_contacts', 'entreprise_id', 'contact_id');
     }
+
+    public function favorites()
+    {
+        return $this->hasMany(FavoriteEntreprise::class, 'entreprise_id', 'id');
+    }
 }

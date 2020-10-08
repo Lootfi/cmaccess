@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 
 class Contact extends Model
@@ -44,5 +45,11 @@ class Contact extends Model
     public function entreprises()
     {
         return $this->belongsToMany(Entreprise::class, 'entreprise_contacts', 'contact_id', 'entreprise_id');
+    }
+
+
+    public function favorites()
+    {
+        return $this->hasMany(FavoriteContact::class, 'contact_id', 'id');
     }
 }

@@ -1763,6 +1763,14 @@ header.header-nav.menu_style_home_six .sign_up_btn .btn {
 .job_loc_img_box:hover .thumb:before {
     opacity: 0.9;
 }
+.job_loc_img_box .unstar {
+    display: none;
+}
+.job_loc_img_box:hover .unstar {
+    color: red;
+    display: block;
+}
+
 .Rounded_Rectangle_10 {
     background-image: -moz-linear-gradient(
         120deg,
@@ -6052,13 +6060,13 @@ legend span {
 .fj_post.style2:hover {
     border-left: 4px solid #82b440;
 }
-.fj_post.style2:hover a.favorit {
+.fj_post.style2:hover .favorit {
     background-color: #82b440;
 }
-.fj_post.style2:hover a.favorit span {
+.fj_post.style2:hover .favorit span {
     color: #fff;
 }
-.fj_post.style2 a.favorit {
+.fj_post.style2 .favorit {
     background-color: #fff;
     border: 1px solid #82b440;
     border-radius: 50%;
@@ -6075,7 +6083,7 @@ legend span {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.fj_post.style2 a.favorit span {
+.fj_post.style2 .favorit span {
     font-size: 26px;
 }
 .fj_post.style2.home5 {
@@ -6195,19 +6203,19 @@ legend span {
     right: 30px;
     top: 60px;
 }
-.fj_post.style2.jlv5 a.favorit {
+.fj_post.style2.jlv5 .favorit {
     border: 1px solid #cbcbcb;
     color: #cbcbcb;
 }
-.fj_post.style2.jlv5:hover a.favorit {
+.fj_post.style2.jlv5:hover .favorit {
     background-color: #cbcbcb;
     color: #fff;
 }
-.fj_post.style2.jlv5 a.favorit:hover {
+.fj_post.style2.jlv5 .favorit:hover {
     background-color: #cbcbcb;
     color: #fff;
 }
-.fj_post.style2.jlv5 a.favorit {
+.fj_post.style2.jlv5 .favorit {
     position: relative;
     display: inline-block;
     margin-right: 15px;

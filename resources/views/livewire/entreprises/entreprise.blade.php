@@ -27,8 +27,12 @@
                     </div>
                 </div>
                 <div class="row job_meta_list mt30 mb30" style="display: flex; align-items: center;">
-                    <div class="col-sm-5 col-lg-5"><button class="btn btn-block btn-thm">Ajouter au Favoris
-                            <span class="flaticon-favorites fz24 pl10"></span></button></div>
+                    <div class="col-sm-5 col-lg-5">
+                        @if (!$is_favorited)
+                        @livewire('favorite',['fav_id' => $entreprise->id,'fav_type' => 'entreprise','layout' =>
+                        'button'])
+                        @endif
+                    </div>
 
                     <div class="col-sm-4 col-lg-4">
                         <a class="mt-25" href="#contacts">Voir Tout les Contacts <span
@@ -109,7 +113,11 @@
                                                 href="#">{{$contact->state . ', ' . $contact->country}}</a></li>
                                     </ul>
                                 </div>
-                                <a class="favorit" href=""><span class="flaticon-favorites"></span></a>
+                                @if (!$contact->favorites->contains('client_id', Auth::user()->id))
+                                @livewire('favorite',['fav_id' => $contact->id,'fav_type' => 'contact','layout' =>
+                                'star'])
+                                @endif
+                                {{-- <a class="favorit" href=""><span class="flaticon-favorites"></span></a> --}}
                             </div>
                         </a>
                     </div>

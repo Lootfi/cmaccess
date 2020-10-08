@@ -65,7 +65,9 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-block btn-thm"><span class="flaticon-ticket"></span> Make An Offer</button>
+                    @if (!$is_favorited)
+                    @livewire('favorite',['fav_id' => $contact->id,'fav_type' => 'contact','layout' => 'button'])
+                    @endif
                 </div>
             </div>
         </div>
@@ -78,56 +80,40 @@
         <div class="row">
             <div class="col-xl-8">
                 <div class="row">
+                    @if ($contact->description_poste)
                     <div class="col-lg-12">
                         <div class="candidate_about_info">
-                            <h4 class="fz20 mb30">About Me</h4>
-                            <p class="mb30">I’m top rated, highly client-oriented and self-organized UX/UI designer with
-                                3+ years of comprehensive experience working across UX/UI, Web and Graphic Design. Have
-                                huge working experience in international teams in collaboration with art director and
-                                front-end devs. Have successful experience in startups as well as award-winning
-                                redesigns of existing projects.</p>
-                            <p class="mb40">I take personal responsibility and pay attention to any detail of my work
-                                and can greatly help you with:</p>
-                            <p>-- creating UX/UI for highloaded interface systems: CRM, SaaS, B2B, ERP systems,
-                                enterprise solutions and analytical systems with administration panels, dashboards,
-                                infographics and compex data</p>
-                            <p>-- information architecting and creating UX/UI from scratch or low-fidelity wireframes to
-                                final visual UI design for web, mobile (iOS, Android) and desktop</p>
-                            <p>-- product design for large international projects: monitoring and management web
-                                applications in health product design for large international projects: monitoring and
-                                management web applications in health analytics</p>
-                            <p class="mt30">The better I do - the better I feel. My aim is to help you to convert the
-                                idea into successful product with the most effective, clean and aesthetic design. I'm
-                                passionately interested in challenging tasks and researching for intricate results.</p>
+                            <h4 class="fz20 mb30">Descriptif du Poste</h4>
+                            <p class="mb30" style="white-space: pre-line">{{$contact->description_poste}}.</p>
                         </div>
                     </div>
+                    @endif
+                    @if ($contact->description_media)
+                    <div class="col-lg-12">
+                        <div class="candidate_about_info">
+                            <h4 class="fz20 mb30">Descriptif du Media</h4>
+                            <p class="mb30" style="white-space: pre-line">{{$contact->description_media}}.</p>
+                        </div>
+                    </div>
+                    @endif
+                    @if ($entreprises)
                     <div class="col-lg-12">
                         <div class="my_resume_eduarea style2">
-                            <h4 class="title">Education</h4>
+                            <h4 class="title">Entreprises</h4>
+                            @foreach ($entreprises as $entreprise)
                             <div class="content">
                                 <div class="circle"></div>
-                                <p class="edu_center">Walters University <small>2002 - 2004</small></p>
-                                <h4 class="edu_stats">Masters In Fine Arts</h4>
+                                <p class="edu_center">{{$entreprise->maison}}</p>
+                                <a href="{{route('entreprise',$entreprise->id)}}">
+                                    <h4 class="edu_stats">{{$entreprise->name}}</h4>
+                                </a>
                                 <p class="mb0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
                                     tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                             </div>
-                            <div class="content">
-                                <div class="circle"></div>
-                                <p class="edu_center">Bachlors in Fine Arts <small>2012 - 2015</small></p>
-                                <h4 class="edu_stats">Tombers Collage</h4>
-                                <p class="mb0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
-                                    tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                            </div>
-                            <div class="content">
-                                <div class="circle"></div>
-                                <p class="edu_center">Imperieal Institute of Art Direction <small>2014 - 2015</small>
-                                </p>
-                                <h4 class="edu_stats">Diploma In Fine Arts</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus.
-                                    Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
                     <div class="col-lg-12">
                         <div class="my_resume_eduarea style2">
                             <h4 class="title">Work & Experience</h4>
@@ -152,24 +138,21 @@
                             <h4 class="title">Portfolio</h4>
                             <div class="col-sm-6 col-lg-4">
                                 <div class="portfolio_item">
-                                    <a class="lightbox-image" data-fancybox-group="Portfolio Title"
-                                        href="images/gallery/1.jpg">
+                                    <a class="lightbox-image" data-fancybox-group="Portfolio Title" href="#">
                                         <img class="img-fluid" src="images/gallery/1.jpg" alt="1.jpg" />
                                     </a>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-lg-4">
                                 <div class="portfolio_item">
-                                    <a class="lightbox-image" data-fancybox-group="Portfolio Title"
-                                        href="images/gallery/2.jpg">
+                                    <a class="lightbox-image" data-fancybox-group="Portfolio Title" href="#">
                                         <img class="img-fluid" src="images/gallery/2.jpg" alt="2.jpg" />
                                     </a>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-lg-4">
                                 <div class="portfolio_item">
-                                    <a class="lightbox-image" data-fancybox-group="Portfolio Title"
-                                        href="images/gallery/3.jpg">
+                                    <a class="lightbox-image" data-fancybox-group="Portfolio Title" href="#">
                                         <img class="img-fluid" src="images/gallery/3.jpg" alt="3.jpg" />
                                     </a>
                                 </div>
@@ -398,7 +381,7 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // console.log(@this.search)
+        // console.log(@this.is_favorited)
     })
 </script>
 @endpush

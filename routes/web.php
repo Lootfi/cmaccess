@@ -7,6 +7,7 @@ use App\Http\Livewire\Contacts\Contacts;
 use App\Http\Livewire\Entreprises\Entreprise;
 use App\Http\Livewire\Entreprises\Entreprises;
 use App\Http\Livewire\User\ManageEssaiGratuit;
+use App\Http\Livewire\User\MyFavoriteContacts;
 use App\Http\Livewire\User\PasswordUpdate;
 use App\Http\Livewire\User\ProfileUpdate;
 use Illuminate\Http\Request;
@@ -33,6 +34,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/profile/update', ProfileUpdate::class)->name('profile-update');
     Route::get('/profile/password', PasswordUpdate::class)->name('password-update');
     Route::get('/profile/essaigratuit', ManageEssaiGratuit::class)->name('essai-gratuit');
+    Route::get('/profile/favorite-contacts', MyFavoriteContacts::class)->name('favorite-contacts');
     Route::get('/', function () {
         return view('welcome');
         // Storage::disk('artist_pictures')->delete('public/images/artists/default.jpeg');
@@ -43,6 +45,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/contacts/{contact}', Contact::class)->name('contact');
     Route::get('/entreprises', Entreprises::class)->name('entreprises');
     Route::get('/entreprises/{entreprise}', Entreprise::class)->name('entreprise');
+
     // Route::post('/contacts', [Contact::class, 'search'])->name('contacts.search');
     // Route::get('/contacts/{slug}', [ContactController::class, 'show'])->name('contact');
 

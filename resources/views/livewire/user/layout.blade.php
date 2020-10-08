@@ -16,7 +16,8 @@
                         <li class="{{Request::routeIs('profile-update') ? 'active' : ''}}"><a
                                 href="{{route('profile-update')}}"><span class="flaticon-profile"></span>
                                 Mon Profile</a></li>
-                        <li><a href="page-candidates-favourite-jobs.html"><span class="flaticon-favorites"></span>
+                        <li class="{{Request::routeIs('favorite-contacts') ? 'active' : ''}}"><a
+                                href="{{route('favorite-contacts')}}"><span class="flaticon-favorites"></span>
                                 Mes Contacts Favorites</a></li>
                         @if (!$user->payment_confirmed)
                         <li class="{{Request::routeIs('essai-gratuit') ? 'active' : ''}}"><a

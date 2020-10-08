@@ -87,4 +87,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(ClientPaymentAuthorization::class, 'client_id', 'id');
     }
+
+    public function favorited_contacts()
+    {
+        return $this->belongsToMany(Contact::class, 'clients_favorite_contacts', 'client_id', 'contact_id');
+    }
 }
