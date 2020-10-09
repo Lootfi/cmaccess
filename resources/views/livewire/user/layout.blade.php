@@ -19,6 +19,9 @@
                         <li class="{{Request::routeIs('favorite-contacts') ? 'active' : ''}}"><a
                                 href="{{route('favorite-contacts')}}"><span class="flaticon-favorites"></span>
                                 Mes Contacts Favorites</a></li>
+                        <li class="{{Request::routeIs('favorite-entreprises') ? 'active' : ''}}"><a
+                                href="{{route('favorite-entreprises')}}"><span class="flaticon-favorites"></span>
+                                Mes Entreprises Favorites</a></li>
                         @if (!$user->payment_confirmed)
                         <li class="{{Request::routeIs('essai-gratuit') ? 'active' : ''}}"><a
                                 href="{{route('essai-gratuit')}}"><span class="flaticon-customer-support"></span>Essai
@@ -27,8 +30,6 @@
                         <li class="{{Request::routeIs('password-update') ? 'active' : ''}}"><a
                                 href="{{route('password-update')}}"><span class="flaticon-locked"></span> Changer
                                 Mon Mot de Passe</a></li>
-                        <li><a href="page-log-reg.html"><span class="flaticon-logout"></span> Déconnecter</a></li>
-                        <li><a href="#"><span class="flaticon-rubbish-bin"></span> Supprimer Mon Compte</a></li>
                     </ul>
                 </div>
             </div>

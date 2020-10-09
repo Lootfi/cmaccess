@@ -8,6 +8,7 @@ use App\Http\Livewire\Entreprises\Entreprise;
 use App\Http\Livewire\Entreprises\Entreprises;
 use App\Http\Livewire\User\ManageEssaiGratuit;
 use App\Http\Livewire\User\MyFavoriteContacts;
+use App\Http\Livewire\User\MyFavoriteEntreprises;
 use App\Http\Livewire\User\PasswordUpdate;
 use App\Http\Livewire\User\ProfileUpdate;
 use Illuminate\Http\Request;
@@ -35,6 +36,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/profile/password', PasswordUpdate::class)->name('password-update');
     Route::get('/profile/essaigratuit', ManageEssaiGratuit::class)->name('essai-gratuit');
     Route::get('/profile/favorite-contacts', MyFavoriteContacts::class)->name('favorite-contacts');
+    Route::get('/profile/favorite-entreprises', MyFavoriteEntreprises::class)->name('favorite-entreprises');
     Route::get('/', function () {
         return view('welcome');
         // Storage::disk('artist_pictures')->delete('public/images/artists/default.jpeg');

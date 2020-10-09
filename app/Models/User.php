@@ -92,4 +92,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Contact::class, 'clients_favorite_contacts', 'client_id', 'contact_id');
     }
+
+    public function favorited_entreprises()
+    {
+        return $this->belongsToMany(Entreprise::class, 'clients_favorite_entreprises', 'client_id', 'entreprise_id');
+    }
 }
