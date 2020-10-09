@@ -73,10 +73,13 @@
     }
                 
     document.addEventListener('DOMContentLoaded', function () {
+
+        const port = typeof window !== 'undefined' ? window.location.port : '';
+
         $('#upload_form').on('submit', function(event){
             event.preventDefault();
             $.ajax({
-            url:`http://127.0.0.1:8001/api/artists/${@this.slug}/avatar`,
+            url:`${!port ? 'https://dashboard.contactmajor.com' : 'http://127.0.0.1:8001'}/api/artists/${@this.slug}/avatar`,
             method:"POST",
             data:   new FormData(this),
             dataType:'JSON',
